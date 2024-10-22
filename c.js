@@ -1,4 +1,3 @@
-// Example JavaScript file (app.js)
 window.addEventListener('load', function() {
   window.botpressWebChat.init({
     botId: 'pccoe-bot',
