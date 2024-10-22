@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    position: relative; /* Required for the pseudo-element positioning */
     color: #333;
     display: flex;
     justify-content: center;
@@ -15,13 +15,28 @@ body {
     overflow: hidden; /* Hide scrollbars */
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('image.png'); /* Your background image */
+    background-size: cover; /* Makes the background cover the whole viewport */
+    background-position: center; /* Centers the background image */
+    opacity: 0.9; /* Adjust the opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Ensure it stays behind content */
+}
+
+
 .chat-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     max-width: 450px;
-    height: 700px;
+    height: 600px;
     background-color: #0073ff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
